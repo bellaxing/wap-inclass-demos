@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title"></h1>
+    <button id="start">Start Timer</button>
+    <button id="stop">Stop Timer</button>
+    <h2 id="number"></h2>
+
+    <script>
+        let timerId1, timerId2;
+        let counter = 0;
+        document.getElementById('start').onclick = function(){
+            timerId1 = setTimeout(() => document.getElementById('title').textContent = 'Hi', 0);
+            timerId2 = setInterval(() => document.getElementById('number').textContent = ++counter, 1000);
+            console.log(timerId1, timerId2);
+        }
+
+        document.getElementById('stop').onclick = function(){
+            clearTimeout(timerId1);
+            clearInterval(timerId2);
+        }
+    </script>
+</body>
+</html>
