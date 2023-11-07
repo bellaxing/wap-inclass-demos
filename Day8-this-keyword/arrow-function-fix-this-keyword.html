@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // const group = {
+        //     title: 'WAP',
+        //     students: ['JJ', 'Yoyo', 'Tomtom'],
+        //     showStudents: function(){
+        //         this.students.forEach(stu => {
+        //             console.log(this);
+        //             console.log(`${this.title}, ${stu}`);
+        //         });
+        //     }
+        // }
+
+        // group.showStudents();
+
+
+        // arrow function is not suitable for methods (a function as a property inside object)
+        const person = {
+            firstname: 'John',
+            lastname: 'Smith',
+            getFullName: function () {
+                console.log(this);
+                console.log(`${this.firstname}, ${this.lastname}`);
+            }
+        }
+
+        person.getFullName();
+        // arrow function is suitable for non-method function
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        const sum2 = (a, b) => a + b;
+    </script>
+</head>
+
+<body>
+    Open console, JS demo
+</body>
+
+</html>
