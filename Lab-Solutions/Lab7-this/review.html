@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function foo(num1, num2){
+            console.log(this, num1, num2);
+        }
+
+        // bind -> setTimeout, setInterval, <button onclick=""></button> - facing "losing this" in the callbacks
+        // bind doesn't invoke the function, when call bind(), it'll return another function
+        // why use bind? you want to change this keywrod in the function before dot to be something else
+        // 2. when you call bind, you can also pass parameter to function, starting from the second one
+        const res = foo.bind(89, 99); //typeof res === function
+        // when use bind, there are two ways to pass parameter to function argument.
+        // 1. when you call the return function from bind, you pass them
+        res(6, 9);
+
+
+
+
+        // 1. the first way to invoke a function
+        // foo(); 
+
+        // 2. the second way to invoke a function
+        // when we use call or apply, change this keyword to be something else
+        // the value of the first parameter in call function 
+        // is going to be the value of this keyword in the function  before the dot 
+        // except the value is null and undefined
+        // except the function is arrow function
+        // NOTE: in call, the remaining values you pass as parameters are going to be the values in the function signature argument one by one
+        // foo.call({}, 3, 6, 8);
+
+        // 3. the third way to invoke a function
+        // NOTE: in apply, you need to use array to pass parameters into function
+        // foo.apply({}, [3, 6, 8]);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
