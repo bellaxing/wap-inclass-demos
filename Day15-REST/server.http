@@ -1,0 +1,14 @@
+GET http://localhost:3000/products
+
+###
+GET http://localhost:3000/products/4
+
+###
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "title": "Node.js",
+    "description": "Nice",
+    "price": 3600
+}
