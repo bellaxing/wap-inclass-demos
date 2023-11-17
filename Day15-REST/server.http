@@ -12,3 +12,16 @@ Content-Type: application/json
     "description": "Nice",
     "price": 3600
 }
+
+###
+PUT http://localhost:3000/products/11
+Content-Type: application/json
+
+{
+    "title": "HP2",
+    "description": "Good2",
+    "price": 999
+}
+
+###
+DELETE http://localhost:3000/products/11

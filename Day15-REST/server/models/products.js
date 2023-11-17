@@ -30,7 +30,7 @@ module.exports = class Product {
     updateById(id){
         const index = products.findIndex(p => p.id == id);
         if(index > -1){
-            // this.id = id;
+            this.id = id;
             products[index] = this;
         }else{
             throw new Error(`Product with ID: ${id} cannot find in DB`);

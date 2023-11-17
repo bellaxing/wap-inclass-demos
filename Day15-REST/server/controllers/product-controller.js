@@ -11,9 +11,20 @@ exports.getProductById = (req, res) => {
 
 
 exports.saveProduct = (req, res) => {
-    console.log(req.body);
     const {title, description, price} = req.body;
     new Product(null, title, description, price).save();
     res.status(201).end();
 }
 
+exports.updateProduct = (req, res) => {
+    const {title, description, price} = req.body;
+    const prod = new Product(null, title, description, price);
+    prod.id = req.params.id;
+    prod.updateById(req.params.id);
+    res.status(200).json(prod);
+}
+
+exports.deleteById = (req, res, next) => {
+    Product.deleteById(req.params.id);
+    res.status(200).end();
+}

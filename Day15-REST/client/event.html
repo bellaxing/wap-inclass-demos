@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            const btn1 = document.getElementById('btn1');
+            btn1.onclick = function () {
+                console.log('button 1 clicked.... 1');
+            }
+
+            btn1.onclick = function () {
+                console.log('button 1 clicked.... 2');
+            }
+
+            btn1.onmouseover = function () {
+                this.style.backgroundColor = 'yellow';
+            }
+
+            btn1.onmouseout = function () {
+                this.style.backgroundColor = 'white';
+            }
+
+            const btn2 = document.getElementById('btn2');
+
+            btn2.addEventListener('click', function () {
+                console.log('button 2 clicked..... 3');
+            });
+
+            btn2.addEventListener('click', function () {
+                console.log('button 2 clicked..... 4');
+            });
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <button id="btn1">Click 1</button>
+    <button id="btn2">Click 2</button>
+
+
+</body>
+
+</html>
