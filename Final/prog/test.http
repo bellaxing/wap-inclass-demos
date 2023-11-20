@@ -1,0 +1,17 @@
+GET http://localhost:3000/books/2
+
+###
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+    "title": "EA",
+    "author": {
+        "authorId": 512,
+        "firstname": "John",
+        "lastname": "Smith"
+    }
+}
+
+###
+GET http://localhost:3000/books?firstname=J
